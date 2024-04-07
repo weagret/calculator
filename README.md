@@ -16,4 +16,4 @@ You can see the calculator [here][4].
 [3]: https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E
 [4]: https://weagret.github.io/calculator/ "web calculator"
 [5]: https://www.theodinproject.com/ "The Odin Project"
-[6]: https://github.com/weagret/calculator/LICENSE/ "MIT License"
+[6]: https://github.com/weagret/calculator/blob/main/LICENSE "MIT License"
