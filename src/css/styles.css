@@ -1,0 +1,87 @@
+:root {
+    --font-sans: Arial, Helvetica, sans-serif;
+    --color-black: #000;
+    --color-gray-dark: #444;
+    --text-xxxl: 2rem;
+    --spacing-xs: .25rem;
+    --spacing-sm: 1rem;
+    --radius-base: .5rem;
+
+    font-family: var(--font-sans);
+}
+html, body, .wrapper {
+    margin: 0;
+    padding: 0;
+    color: var(--color-black);
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+body {
+    height: 100vh;
+    font-size: var(--text-xxxl);
+    background-image: url("../images\ and\ gifs/Mountain\ Snow.gif");
+    min-height: 100%;
+    background-position: bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.wrapper, .display {
+    border: var(--spacing-xs) var(--color-gray-dark) solid;
+    border-radius: var(--radius-base);
+}
+.wrapper {
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+}
+.display, td {
+    background-color: transparent;
+    backdrop-filter: blur(30px);
+}
+.display {
+    height: 4rem;
+    width: 14.5rem;
+    margin: var(--spacing-sm);
+    margin-bottom: 0;
+}
+tbody {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    margin: var(--spacing-xs);
+}
+tr {
+    display: flex;
+}
+td {
+    border: .15rem var(--color-gray-dark) solid;
+    border-radius: var(--radius-base);
+    text-align: center;
+    flex: 1;
+    padding: var(--spacing-xs);
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+    margin: var(--spacing-xs);
+    margin-top: 0;
+    cursor: pointer;
+}
+.delete:hover, .number:hover, .operator:hover, .equal:hover {
+    border: .18rem var(--color-black) solid;
+    opacity: 0.75;
+}
+.delete:hover {
+    background-color: rgb(220, 107, 107);
+}
+.number:hover {
+    background-color: var(--color-gray-dark);
+}
+.operator:hover {
+    background-color: rgb(132, 132, 242);
+}
+.equal:hover {
+    background-color: rgb(133, 242, 133);
+}
