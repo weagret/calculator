@@ -53,6 +53,10 @@ body {
     text-align: end;
     overflow-y: hidden;
 }
+p {
+    margin: 0;
+    padding: 0;
+}
 tbody {
     display: flex;
     flex-direction: column;
