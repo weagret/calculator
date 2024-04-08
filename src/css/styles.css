@@ -9,6 +9,9 @@
 
     font-family: var(--font-sans);
 }
+::-webkit-scrollbar {
+    display: none;
+}
 html, body, .wrapper {
     margin: 0;
     padding: 0;
@@ -47,6 +50,8 @@ body {
     width: 14.5rem;
     margin: var(--spacing-sm);
     margin-bottom: 0;
+    text-align: end;
+    overflow-y: hidden;
 }
 tbody {
     display: flex;
