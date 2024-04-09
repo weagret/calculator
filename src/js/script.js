@@ -37,7 +37,7 @@ const addNumberDelimeters = (number) => {
     }
 
     reversedArrayNumber.forEach((elem, index) => {
-        if ((index + 1) % 3 === 0 && (index + 1 !== number.length)) {
+        if ((index + 1) % 3 === 0 && (index + 1 !== reversedArrayNumber.length)) {
             reversedArrayNumber[index] = "," + elem;
         }
     });
