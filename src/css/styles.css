@@ -45,6 +45,7 @@ body {
 .display, td {
     background-color: transparent;
     backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
 }
 .display {
     height: 4rem;
