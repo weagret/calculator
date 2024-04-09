@@ -27,6 +27,7 @@ const calculate = (expression) => {
 };
 
 const addNumberDelimeters = (number) => {
+    if (!/[0-9]/.test(number)) { return Infinity; }
     let reversedArrayNumber = number.split("").reverse();
 
     reversedArrayNumber.forEach((elem, index) => {
@@ -45,7 +46,7 @@ const convertNumberToUserNumber = (number) => {
 
     let indexOfPoint = number.indexOf(".");
     if (indexOfPoint > -1) {
-        wholeNumberEnds = number.slice(0, indexOfPoint);
+        wholePart = number.slice(0, indexOfPoint);
         fractionalPart = "." + number.slice(indexOfPoint+1);
     }
     wholePart = addNumberDelimeters(wholePart);
@@ -60,56 +61,69 @@ const convertUserNumberToNumber = (userNumber) => {
 };
 
 const checkPossibleToAddNumber = () => {
-    return currentOperationDisplay.innerText.length + 1 < 12;
+    return currentOperationDisplay.value.length + 1 < 12;
 };
 
 const addNumber = (number) => {
     if (!checkPossibleToAddNumber()) {
         return;
     }
-    if (currentOperationDisplay.innerText === "0") {
-        currentOperationDisplay.innerText = number;
+    if (currentOperationDisplay.value === "0") {
+        currentOperationDisplay.value = number;
     } else {
         let currentNumber = convertUserNumberToNumber(
-            currentOperationDisplay.innerText
+            currentOperationDisplay.value
         );
         currentNumber += number;
         currentNumber = convertNumberToUserNumber(currentNumber);
-        currentOperationDisplay.innerText = currentNumber;
+        currentOperationDisplay.value = currentNumber;
     }
 };
 const addOperator = (operator) => {
-    lastOperationDisplay.innerText =
-                currentOperationDisplay.innerText + " " + operator;
-    currentOperationDisplay.innerText = "";
+    if (lastOperationDisplay.value.length === 0) {
+        lastOperationDisplay.value =
+                    currentOperationDisplay.value + " " + operator;
+    } else {
+        return;
+    }
+    currentOperationDisplay.value = "0";
 };
 const processAC = () => {
-    currentOperationDisplay.innerText = "";
-    lastOperationDisplay.innerText = "";
+    currentOperationDisplay.value = "";
+    lastOperationDisplay.value = "";
     
-    currentOperationDisplay.innerText = "0";
+    currentOperationDisplay.value = "0";
 };
 const processDE = () => {
-    if (currentOperationDisplay.innerText.length > 1) {
-        currentOperationDisplay.innerText =
-                    currentOperationDisplay.innerText.slice(0, -1);
+    if (currentOperationDisplay.value.length > 1) {
+        let currentNumber = convertUserNumberToNumber(
+            currentOperationDisplay.value
+        );
+        currentNumber = convertNumberToUserNumber(
+            currentNumber.slice(0, -1)
+        );
+        currentOperationDisplay.value = currentNumber;
     } else {
-        currentOperationDisplay.innerText =
-                    lastOperationDisplay.innerText;
-        lastOperationDisplay.innerText = "";
+        if (lastOperationDisplay.value.length > 0) {
+            currentOperationDisplay.value =
+                        lastOperationDisplay.value;
+        } else {
+            currentOperationDisplay.value = "0";
+        }
+        lastOperationDisplay.value = "";
     }
 };
 const processPoint = () => {
-    if (currentOperationDisplay.innerText.includes(".")) {
+    if (currentOperationDisplay.value.includes(".")) {
         return;
     }
-    currentOperationDisplay.innerText += ".";
+    currentOperationDisplay.value += ".";
 };
 const processEqual = () => {
-    currentOperationDisplay.innerText = calculate(
-        lastOperationDisplay.innerText + " " + currentOperationDisplay.innerText
+    currentOperationDisplay.value = calculate(
+        lastOperationDisplay.value + " " + currentOperationDisplay.value
     );
-    lastOperationDisplay.innerText = "";
+    lastOperationDisplay.value = "";
 };
 const processSpecialMethod = (method) => {
     switch (method) {
