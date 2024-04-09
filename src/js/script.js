@@ -7,7 +7,7 @@ let currentOperationDisplay = document.getElementById(
 
 const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 const operators = ["+", "-", "/", "*"];
-const specialMethods = ["AC", "DE", ".", "="];
+const specialMethods = ["AC", "DE", ".", "=", "A", "D", "ENTER"];
 
 const calculate = (expression) => {
     let expressionAsArray = expression
@@ -127,9 +127,15 @@ const processEqual = () => {
 };
 const processSpecialMethod = (method) => {
     switch (method) {
+        case "A":
         case "AC": processAC(); break;
+
+        case "D":
         case "DE": processDE(); break;
+
         case ".": processPoint(); break;
+
+        case "ENTER":
         case "=": processEqual(); break;
     }
 };
@@ -149,5 +155,8 @@ window.addEventListener("load", (event) => {
         elem.addEventListener("click", () => {
             updateCalculatorDisplay(elem.innerText);
         });
+    });
+    document.addEventListener("keydown", (event) => {
+        updateCalculatorDisplay(event.key.toUpperCase());
     });
 });
