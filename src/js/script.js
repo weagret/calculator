@@ -29,6 +29,12 @@ const calculate = (expression) => {
 const addNumberDelimeters = (number) => {
     if (!/[0-9]/.test(number)) { return Infinity; }
     let reversedArrayNumber = number.split("").reverse();
+    let minus = "";
+
+    if (reversedArrayNumber[reversedArrayNumber.length-1] === "-") {
+        minus = "-"
+        reversedArrayNumber.pop();
+    }
 
     reversedArrayNumber.forEach((elem, index) => {
         if ((index + 1) % 3 === 0 && (index + 1 !== number.length)) {
@@ -37,7 +43,7 @@ const addNumberDelimeters = (number) => {
     });
 
     let finalNumber = reversedArrayNumber.reverse().join("");
-    return finalNumber;
+    return minus + finalNumber;
 };
 
 const convertNumberToUserNumber = (number) => {
@@ -56,7 +62,7 @@ const convertNumberToUserNumber = (number) => {
 const convertUserNumberToNumber = (userNumber) => {
     return userNumber
            .split("")
-           .filter((value) => /[0-9]/.test(value) || value === ".")
+           .filter((value) => /[0-9]/.test(value) || value === "." || value === "-")
            .join("");
 };
 
@@ -120,6 +126,8 @@ const processPoint = () => {
     currentOperationDisplay.value += ".";
 };
 const processEqual = () => {
+    console.log(currentOperationDisplay.value);
+    console.log(lastOperationDisplay.value);
     currentOperationDisplay.value = calculate(
         lastOperationDisplay.value + " " + currentOperationDisplay.value
     );
