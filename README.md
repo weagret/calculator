@@ -5,14 +5,14 @@
 This is online calculator made with love ❤️.   
 ![video](./src/images%20and%20gifs/video.gif)
 ## See the website
-You can see the calculator [here](1).   
+You can see the calculator [here][1].   
 ## Features
  - Mouse and keyboard inputs are supported   
  - Calculator can add, divide, multiply, substract and etc.   
 ## Acknowledgment
- - Insipiration from [The Odin Project](2)   
+ - Insipiration from [The Odin Project][2]   
 ## License
- - [MIT License](3)
+ - [MIT License][3]
 
 
 [1]: https://weagret.github.io/calculator/ "web calculator"
