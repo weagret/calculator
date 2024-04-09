@@ -18,4 +18,4 @@ You can see the calculator [here][4].
 [4]: https://weagret.github.io/calculator/ "web calculator"
 [5]: https://www.theodinproject.com/ "The Odin Project"
 [6]: https://github.com/weagret/calculator/blob/main/LICENSE "MIT License"
-[7]: https://github.com/weagret/calculator/blob/main/src/images%20and%20gifs/Screenshot%202024-04-09%20050011.png
+[7]: ./src/images%20and%20gifs/calculator%20-%20Google%20Chrome%202024-04-09%2006-20-36.mp4
