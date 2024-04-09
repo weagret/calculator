@@ -1,6 +1,7 @@
 # Web calculator  
 ![HTML5][1] ![CSS3][2] ![JavaScript][3]   
 This is online calculator made with love ❤️.   
+![Calculator][7]
 ## See the website
 You can see the calculator [here][4].   
 ## Features
@@ -17,3 +18,4 @@ You can see the calculator [here][4].
 [4]: https://weagret.github.io/calculator/ "web calculator"
 [5]: https://www.theodinproject.com/ "The Odin Project"
 [6]: https://github.com/weagret/calculator/blob/main/LICENSE "MIT License"
+[7]: https://github.com/weagret/calculator/blob/main/src/images%20and%20gifs/Screenshot%202024-04-09%20050011.png
