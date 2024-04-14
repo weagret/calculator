@@ -112,7 +112,7 @@ const processDE = () => {
     } else {
         if (lastOperationDisplay.value.length > 0) {
             currentOperationDisplay.value =
-                        lastOperationDisplay.value;
+                        lastOperationDisplay.value.split(" ")[0];
         } else {
             currentOperationDisplay.value = "0";
         }
